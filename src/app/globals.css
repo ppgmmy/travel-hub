@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --paper: #ffffff;
+  --ink: #141414;
+  --muted: #5a6570;
+  --line: #d5dbe0;
+  --wash: #f3f5f6;
+  --stamp: #c4282a;
+  --ok: #1b6b43;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-wash: var(--wash);
+  --color-stamp: var(--stamp);
+  --color-ok: var(--ok);
+  --font-sans: "Noto Sans TC", "PingFang HK", "PingFang TC", "Microsoft JhengHei",
+    "Heiti TC", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--stamp) 18%, white);
+  color: var(--ink);
+}

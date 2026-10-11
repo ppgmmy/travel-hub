@@ -86,22 +86,21 @@ async function TripDetailBody({ params }: { params: Promise<{ id: string }> }) {
         <Link href="/book">機票酒店外連</Link>
       </nav>
 
-      <section>
+      <section id="itinerary">
         <SectionHeading
-          id="itinerary"
           kicker="日程"
           title={`${trip.itinerary.length} 日骨架 · ${formatZhDateWithWeekday(trip.startDate)} 起`}
         />
         <DayTimeline days={trip.itinerary} />
       </section>
 
-      <section>
-        <SectionHeading id="checklist" kicker="清單" title="出發前核對" />
+      <section id="checklist">
+        <SectionHeading kicker="清單" title="出發前核對" />
         <TripChecklist tripId={trip.id} items={trip.checklist} />
       </section>
 
-      <section>
-        <SectionHeading id="notes" kicker="筆記" title="行程備忘" />
+      <section id="notes">
+        <SectionHeading kicker="筆記" title="行程備忘" />
         <TripNotes tripId={trip.id} seedNotes={trip.notes} />
       </section>
 

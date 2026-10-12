@@ -20,6 +20,11 @@ export type ItineraryDay = {
   items: ItineraryItem[];
 };
 
+export type RouteStop = {
+  title: string;
+  hint: string;
+};
+
 export type Trip = {
   id: string;
   title: string;
@@ -30,6 +35,7 @@ export type Trip = {
   destinationId: string;
   crossing?: string;
   summary: string;
+  route?: RouteStop[];
   itinerary: ItineraryDay[];
   notes: string[];
   checklist: ChecklistItem[];

@@ -1,21 +1,41 @@
-export function RouteStrip() {
+import type { RouteStop } from "@/lib/types";
+
+const FALLBACK_STOPS: RouteStop[] = [
+  { title: "香港", hint: "專線巴士" },
+  { title: "深圳灣口岸", hint: "主口岸" },
+  { title: "前海", hint: "桂灣／媽灣" },
+];
+
+export function RouteStrip({
+  stops = FALLBACK_STOPS,
+}: {
+  stops?: RouteStop[];
+}) {
+  const display = stops.length >= 3 ? stops.slice(0, 3) : FALLBACK_STOPS;
+  const start = display[0];
+  const mid = display[1];
+  const end = display[2];
+  if (!start || !mid || !end) {
+    return null;
+  }
+
   return (
     <div
       className="border-y border-line py-4"
-      aria-label="過關路線：香港、皇崗口岸、福田"
+      aria-label={`過關路線：${start.title}、${mid.title}、${end.title}`}
     >
       <ol className="grid grid-cols-3 gap-2 text-center">
         <li>
-          <p className="text-sm font-semibold">香港</p>
-          <p className="font-mono text-[11px] text-muted">落馬洲</p>
+          <p className="text-sm font-semibold">{start.title}</p>
+          <p className="font-mono text-[11px] text-muted">{start.hint}</p>
         </li>
         <li>
-          <p className="text-sm font-semibold text-stamp">皇崗口岸</p>
-          <p className="font-mono text-[11px] text-muted">黃崗 · 24h</p>
+          <p className="text-sm font-semibold text-stamp">{mid.title}</p>
+          <p className="font-mono text-[11px] text-muted">{mid.hint}</p>
         </li>
         <li>
-          <p className="text-sm font-semibold">福田</p>
-          <p className="font-mono text-[11px] text-muted">深圳</p>
+          <p className="text-sm font-semibold">{end.title}</p>
+          <p className="font-mono text-[11px] text-muted">{end.hint}</p>
         </li>
       </ol>
       <div className="relative mt-3 h-px bg-line">

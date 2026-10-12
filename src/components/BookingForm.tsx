@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { buildOutboundLinks, type BookingSearchInput } from "@/lib/booking-links";
 
 const PRESETS = [
-  { origin: "HKG", destination: "SZX", hotelQuery: "福田, 深圳" },
+  { origin: "HKG", destination: "SZX", hotelQuery: "前海, 深圳" },
   { origin: "HKG", destination: "CAN", hotelQuery: "廣州塔, 廣州" },
   { origin: "HKG", destination: "MFM", hotelQuery: "澳門半島" },
 ] as const;

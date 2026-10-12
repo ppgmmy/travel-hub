@@ -21,7 +21,7 @@ async function HomeBody() {
   const today = await getRequestHongKongToday();
   const featured = getFeaturedTrip(today);
   const archived = getArchivedTrips(today);
-  const guide = getAllGuides().find((item) => item.slug === "huanggang-futian");
+  const guide = getAllGuides().find((item) => item.slug === featured?.destinationId);
 
   return (
     <div className="flex flex-col gap-10">
@@ -59,7 +59,7 @@ async function HomeBody() {
             <StatusStamp lifecycle={getTripLifecycle(featured, today)} />
           </div>
           <div className="mt-6">
-            <RouteStrip />
+            <RouteStrip stops={featured.route} />
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
@@ -88,7 +88,7 @@ async function HomeBody() {
 
       {guide ? (
         <section>
-          <SectionHeading kicker="指南" title="黃崗／福田實用筆記" />
+          <SectionHeading kicker="指南" title={`${guide.title}實用筆記`} />
           <p className="max-w-xl text-sm leading-6 text-muted text-pretty">
             {guide.excerpt}
           </p>

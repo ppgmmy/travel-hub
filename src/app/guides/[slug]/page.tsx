@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { NearbyPlaces } from "@/components/NearbyPlaces";
 import { formatZhDate } from "@/lib/dates";
 import { getAllGuides, getGuideBySlug } from "@/lib/guides";
 import { getAllTrips } from "@/lib/trips";
@@ -44,6 +45,9 @@ export default async function GuidePage({ params }: PageProps<"/guides/[slug]">)
             {section.title}
           </a>
         ))}
+        {relatedTrip?.nearby && relatedTrip.nearby.length > 0 ? (
+          <a href="#nearby">附近</a>
+        ) : null}
       </nav>
 
       {guide.sections.map((section) => (
@@ -65,6 +69,16 @@ export default async function GuidePage({ params }: PageProps<"/guides/[slug]">)
           ) : null}
         </section>
       ))}
+
+      {relatedTrip?.nearby && relatedTrip.nearby.length > 0 ? (
+        <section id="nearby">
+          <h2 className="text-xl font-semibold tracking-tight">附近</h2>
+          <NearbyPlaces
+            places={relatedTrip.nearby}
+            intro="跟今次行程：住海上世界 Rany Hotel，前海當日遊。景點、購物、食同地鐵／藥房都寫喺下面。"
+          />
+        </section>
+      ) : null}
 
       {relatedTrip ? (
         <footer className="border-t border-line pt-6">

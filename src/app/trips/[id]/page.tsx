@@ -6,7 +6,9 @@ import { ArchiveRuleNote } from "@/components/ArchiveRuleNote";
 import { DayTimeline } from "@/components/DayTimeline";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatusStamp } from "@/components/StatusStamp";
+import { NearbyPlaces } from "@/components/NearbyPlaces";
 import { TripChecklist } from "@/components/TripChecklist";
+import { TripLodging } from "@/components/TripLodging";
 import { TripNotes } from "@/components/TripNotes";
 import { formatZhDateWithWeekday, formatZhRange } from "@/lib/dates";
 import { archiveReasonLabel, countdownLabel } from "@/lib/labels";
@@ -79,12 +81,31 @@ async function TripDetailBody({ params }: { params: Promise<{ id: string }> }) {
       ) : null}
 
       <nav className="flex flex-wrap gap-x-4 gap-y-2 border-y border-line py-3 text-sm">
+        {trip.lodging ? <a href="#lodging">住宿</a> : null}
+        {trip.nearby && trip.nearby.length > 0 ? <a href="#nearby">附近</a> : null}
         <a href="#itinerary">日程</a>
         <a href="#checklist">清單</a>
         <a href="#notes">筆記</a>
         <Link href={`/guides/${trip.destinationId}`}>指南</Link>
         <Link href="/book">機票酒店外連</Link>
       </nav>
+
+      {trip.lodging ? (
+        <section id="lodging">
+          <SectionHeading kicker="住宿" title={trip.lodging.name} />
+          <TripLodging lodging={trip.lodging} />
+        </section>
+      ) : null}
+
+      {trip.nearby && trip.nearby.length > 0 ? (
+        <section id="nearby">
+          <SectionHeading kicker="附近" title="酒店同前海實用名單" />
+          <NearbyPlaces
+            places={trip.nearby}
+            intro="以海底世界 Rany Hotel／海上世界為基地，前海係第二日外訪。名單精簡，唔係打卡清單。"
+          />
+        </section>
+      ) : null}
 
       <section id="itinerary">
         <SectionHeading

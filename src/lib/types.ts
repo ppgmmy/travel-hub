@@ -25,6 +25,25 @@ export type RouteStop = {
   hint: string;
 };
 
+export type Lodging = {
+  name: string;
+  area: string;
+  checkInDate: string;
+  checkOutDate: string;
+  earliestCheckIn?: string;
+  note?: string;
+};
+
+export type NearbyKind = "attraction" | "shopping" | "food" | "practical";
+
+export type NearbyPlace = {
+  name: string;
+  kind: NearbyKind;
+  cluster: string;
+  note: string;
+  dayHint?: string;
+};
+
 export type Trip = {
   id: string;
   title: string;
@@ -35,6 +54,8 @@ export type Trip = {
   destinationId: string;
   crossing?: string;
   summary: string;
+  lodging?: Lodging;
+  nearby?: NearbyPlace[];
   route?: RouteStop[];
   itinerary: ItineraryDay[];
   notes: string[];

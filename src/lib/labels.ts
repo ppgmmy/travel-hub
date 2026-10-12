@@ -1,5 +1,5 @@
 import { daysUntil } from "./dates";
-import type { ArchiveReason, Trip, TripLifecycle } from "./types";
+import type { ArchiveReason, NearbyKind, Trip, TripLifecycle } from "./types";
 
 export function lifecycleLabel(lifecycle: TripLifecycle): string {
   switch (lifecycle) {
@@ -26,6 +26,23 @@ export function archiveReasonLabel(reason: ArchiveReason): string {
       return "結束日已過，且狀態 = archived";
     default: {
       const exhaustive: never = reason;
+      return exhaustive;
+    }
+  }
+}
+
+export function nearbyKindLabel(kind: NearbyKind): string {
+  switch (kind) {
+    case "attraction":
+      return "景點";
+    case "shopping":
+      return "購物";
+    case "food":
+      return "食";
+    case "practical":
+      return "實用";
+    default: {
+      const exhaustive: never = kind;
       return exhaustive;
     }
   }

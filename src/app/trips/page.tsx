@@ -28,7 +28,7 @@ async function TripsBody() {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight">旅程</h1>
         <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
-          進行中同即將出發嘅行程。結束日已過或狀態為 archived 嘅紀錄，請到檔案。
+          進行中同即將出發嘅行程。呢度嘅前海係示範樣本。結束日已過或狀態為 archived 嘅紀錄，請到檔案。
         </p>
       </header>
       {trips.length === 0 ? (
@@ -45,6 +45,9 @@ async function TripsBody() {
                   {trip.title}
                 </Link>
                 <StatusPill lifecycle={getTripLifecycle(trip, today)} />
+                {trip.sample ? (
+                  <span className="font-mono text-[11px] text-muted">樣本</span>
+                ) : null}
               </div>
               <p className="mt-1 font-mono text-xs text-muted">
                 {formatZhRange(trip.startDate, trip.endDate)} ·{" "}

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · 旅遊樞紐",
   },
   description:
-    "個人行程手帳、目的地指南，以及機票酒店外連搜尋。內容存於 repo，唔顯示假價錢。",
+    "備用模板：複製 repo 部署新旅程站。日常同伴係 trip-companion。機票酒店只提供外連搜尋。",
 };
 
 export const viewport: Viewport = {

@@ -26,12 +26,13 @@ async function HomeBody() {
   return (
     <div className="flex flex-col gap-10">
       <section>
-        <p className="font-mono text-[11px] tracking-[0.2em] text-stamp">口岸手帳</p>
+        <p className="font-mono text-[11px] tracking-[0.2em] text-stamp">備用模板</p>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight text-balance">
           行程、指南、外連，同一個樞紐
         </h1>
         <p className="mt-3 max-w-xl text-sm leading-7 text-muted text-pretty">
-          進行中嘅旅程睇日程同清單；目的地指南寫過關同交通；機票酒店只係外連搜尋，唔顯示即時價錢。
+          呢個站係示範／備用模板，方便下次開新 GitHub repo 部署 Vercel。日常行程同伴係
+          trip-companion。下面前海係樣本內容，功能齊，方便你改成新旅程。
         </p>
       </section>
 
@@ -40,7 +41,7 @@ async function HomeBody() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-[11px] tracking-[0.16em] text-stamp">
-                當前／即將出發
+                {featured.sample ? "樣本行程" : "當前／即將出發"}
               </p>
               <h2 className="mt-1 text-2xl font-semibold tracking-tight">
                 {featured.title}

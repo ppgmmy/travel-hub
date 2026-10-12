@@ -26,11 +26,11 @@ npm start
 | `/trips` | 進行中旅程 |
 | `/trips/[id]` | 日程、清單、筆記 |
 | `/guides` | 指南列表 |
-| `/guides/huanggang-futian` | 黃崗／福田指南 |
+| `/guides/qianhai` | 前海指南 |
 | `/archive` | 已結束或已封存旅程 |
 | `/book` | 機票／酒店外連搜尋（無即時報價） |
 
-種子行程：`huanggang-futian-2026-10`（黃崗／福田，2026-10-12 至 2026-10-13，`status: active`）。結束日已過或以香港日期計已完結，或 `status` 為 `archived`，就會出現在檔案。
+種子行程：`qianhai-2026-10`（前海，2026-10-12 至 2026-10-13，`status: active`）。結束日已過或以香港日期計已完結，或 `status` 為 `archived`，就會出現在檔案。
 
 ## 內容檔
 

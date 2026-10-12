@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
-  const seed = getTripById("huanggang-futian-2026-10");
+  const seed = getTripById("qianhai-2026-10");
 
   return (
     <div className="flex flex-col gap-6">
@@ -21,14 +21,14 @@ export default function BookPage() {
       <aside className="border border-stamp/40 bg-wash px-3 py-3 text-sm leading-6">
         <p className="font-medium text-stamp">外連搜尋 · 非即時報價 · 本站不代訂</p>
         <p className="mt-1 text-muted">
-          黃崗／福田呢次係陸路過關，機票只係備用。酒店搜尋預設福田，日期跟種子行程 10 月 12–13 日。
+          前海呢次係陸路過關（深圳灣），機票只係備用。酒店搜尋預設前海，日期跟種子行程 10 月 12–13 日。
         </p>
       </aside>
       <BookingForm
         initial={{
           origin: "HKG",
           destination: "SZX",
-          hotelQuery: "福田, 深圳",
+          hotelQuery: "前海, 深圳",
           departDate: seed?.startDate ?? "2026-10-12",
           returnDate: seed?.endDate ?? "2026-10-13",
         }}

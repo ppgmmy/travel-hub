@@ -54,6 +54,7 @@ export type Trip = {
   destinationId: string;
   crossing?: string;
   summary: string;
+  sample?: boolean;
   lodging?: Lodging;
   nearby?: NearbyPlace[];
   route?: RouteStop[];

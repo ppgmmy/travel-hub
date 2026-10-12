@@ -57,6 +57,7 @@ async function TripDetailBody({ params }: { params: Promise<{ id: string }> }) {
         <div>
           <p className="font-mono text-[11px] tracking-[0.16em] text-muted">
             {trip.id}
+            {trip.sample ? " · 樣本行程" : ""}
           </p>
           <h1 className="mt-1 text-3xl font-semibold tracking-tight">{trip.title}</h1>
           <p className="mt-2 font-mono text-sm text-muted">

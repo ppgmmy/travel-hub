@@ -15,7 +15,7 @@ Standby / reusable template: clone this repo and deploy to Vercel when you need 
 3. 喺 [Vercel](https://vercel.com/new) 導入嗰個新 repo。Framework 選 Next.js，`npm run build`，無需資料庫、無需環境變數。
 4. 推到 `main` 就會自動部署。
 
-示範內容：`qianhai-2026-10`（前海，2026-10-12 至 2026-10-14）係**樣本行程**，用嚟示範版面，唔係日常主站。
+示範內容：`qianhai-2026-10`（前海，2026-10-12 至 2026-10-13，兩日一夜）係**樣本行程**，用嚟示範版面，唔係日常主站。
 
 ## 本機執行
 
